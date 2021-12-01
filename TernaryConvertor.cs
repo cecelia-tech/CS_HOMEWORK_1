@@ -1,35 +1,20 @@
 ﻿using System;
 using System.Text;
-using CS_HOMEWORK_1;
 
-namespace CS_Homework_1
+namespace CS_HOMEWORK_1
 {
-    class Program1
+    public class TernaryConvertor
     {
-        static void Main(string[] args)
-        {
-
-            Console.Write("Enter first integer: ");
-            int countFrom = int.Parse(Console.ReadLine());
-            Console.Write("Enter second integer: ");
-            int countTo = int.Parse(Console.ReadLine());
-
-            TernaryConvertor ternaryConvertor = new TernaryConvertor();
-
-            ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
-
-        }
-/*
-        //This methos converts given number  to ternary number system and returns
+        //This method converts given number  to ternary number system and returns
         //it as a string
 
-        public static StringBuilder ConvertToTernary (int number)
+        public StringBuilder ConvertToTernary(int number)
         {
             StringBuilder ternaryString = new StringBuilder();
 
             //since ternary base is 3, it is okay to hardcode it
 
-            int dalinys = number / 3;
+            int quotient = number / 3;
             int remainder = number % 3;
 
             //the ternaryString is made by adding each number to the front of
@@ -37,9 +22,9 @@ namespace CS_Homework_1
 
             ternaryString.Insert(0, remainder);
 
-            if (dalinys >= 3)
+            if (quotient >= 3)
             {
-                ternaryString.Insert(0, ConvertToTernary(dalinys));
+                ternaryString.Insert(0, ConvertToTernary(quotient));
             }
             else
             {
@@ -53,7 +38,7 @@ namespace CS_Homework_1
 
         //checks how many number 2 has the string and returns true if it has two 2s
 
-        public static bool CheckForTwos(StringBuilder ternaryString)
+        public bool CheckForTwos(StringBuilder ternaryString)
         {
             int numberOf2InString = 0;
 
@@ -70,7 +55,7 @@ namespace CS_Homework_1
 
         //Method checks for numbers satisfying the task in the range given
 
-        public static void CheckForAppropriateInteger(int nuo, int iki)
+        public void CheckForAppropriateInteger(int nuo, int iki)
         {
             for (int i = nuo; i <= iki; i++)
             {
@@ -81,9 +66,9 @@ namespace CS_Homework_1
             }
         }
 
-        public static void NumberPrint(int number)
+        public void NumberPrint(int number)
         {
             Console.WriteLine(number);
-       */ 
+        }
     }
 }
