@@ -7,19 +7,16 @@ namespace CS_HOMEWORK_1
     {
         //This method converts given number  to ternary number system and returns
         //it as a string
-
         public StringBuilder ConvertToTernary(int number)
         {
             StringBuilder ternaryString = new StringBuilder();
 
-            //since ternary base is 3, it is okay to hardcode it
-
+            //Ternary number system base is 3, it is okay to hardcode it
             int quotient = number / 3;
             int remainder = number % 3;
 
             //the ternaryString is made by adding each number to the front of
             //the array
-
             ternaryString.Insert(0, remainder);
 
             if (quotient >= 3)
@@ -29,7 +26,6 @@ namespace CS_HOMEWORK_1
             else
             {
                 //ternary number system first number always is 1
-
                 ternaryString.Insert(0, 1);
             }
 
@@ -37,7 +33,6 @@ namespace CS_HOMEWORK_1
         }
 
         //checks how many number 2 has the string and returns true if it has two 2s
-
         public bool CheckForTwos(StringBuilder ternaryString)
         {
             int numberOf2InString = 0;
@@ -54,7 +49,6 @@ namespace CS_HOMEWORK_1
         }
 
         //Method checks for numbers satisfying the task in the range given
-
         public void CheckForAppropriateInteger(int nuo, int iki)
         {
             for (int i = nuo; i <= iki; i++)

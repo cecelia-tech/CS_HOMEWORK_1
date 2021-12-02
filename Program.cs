@@ -18,6 +18,14 @@ namespace CS_Homework_1
 
             ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
 
+            Console.WriteLine("Test");
+            Console.WriteLine(ternaryConvertor.ConvertToTernary(47));
+
+
+
+            Console.WriteLine("Enter 9 integer digits: ");
+            string numbersArray = Console.ReadLine();
+
         }
 /*
         //This methos converts given number  to ternary number system and returns
