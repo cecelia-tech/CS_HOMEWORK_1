@@ -16,7 +16,7 @@ namespace CS_Homework_2
             return MultiplicationOfNumbers(arrayOfNum);
         }
 
-        //Multiplies the array of integers accordingly to ISBN counting standart
+        //Multiplies and sums up the array of integers accordingly to ISBN counting standart
         public string MultiplicationOfNumbers(int[] arrayOfNumbers)
         {
             int sumOfMultipliedNumbers = 0;
@@ -30,6 +30,7 @@ namespace CS_Homework_2
             return CheckDigit(sumOfMultipliedNumbers);
 
         }
+
         //Calculates check digit
         public string CheckDigit(int sumOfMultipliedNumbers)
         {
