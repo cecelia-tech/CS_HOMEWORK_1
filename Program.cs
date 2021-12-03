@@ -24,11 +24,18 @@ namespace CS_Homework_1
 
 
 
-            Console.WriteLine("Enter 9 integer digits: ");
-            string numbersArray = Console.ReadLine();
+            //Console.WriteLine("Enter 9 integer digits: ");
+            //string numbersArray = Console.ReadLine();
 
-            ISBN isbn = new ISBN();
-            isbn.IsbnNumericCode(numbersArray);
+            //ISBN isbn = new ISBN();
+            //isbn.IsbnNumericCode(numbersArray);
+
+            Console.WriteLine("Enter at least two integer digits: ");
+            string userInputNumbers = Console.ReadLine();
+
+            SumOfArray sumOfArray = new SumOfArray();
+            Console.WriteLine(userInputNumbers);
+            Console.WriteLine(sumOfArray.SumOfRequaredNumbers(userInputNumbers));
         }
 /*
         //This methos converts given number  to ternary number system and returns
