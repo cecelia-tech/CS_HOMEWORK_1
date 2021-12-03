@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using CS_HOMEWORK_1;
+using CS_Homework_2;
 
 namespace CS_Homework_1
 {
@@ -9,23 +10,25 @@ namespace CS_Homework_1
         static void Main(string[] args)
         {
 
-            Console.Write("Enter first integer: ");
-            int countFrom = int.Parse(Console.ReadLine());
-            Console.Write("Enter second integer: ");
-            int countTo = int.Parse(Console.ReadLine());
+            //Console.Write("Enter first integer: ");
+            //int countFrom = int.Parse(Console.ReadLine());
+            //Console.Write("Enter second integer: ");
+            //int countTo = int.Parse(Console.ReadLine());
 
-            TernaryConvertor ternaryConvertor = new TernaryConvertor();
+            //TernaryConvertor ternaryConvertor = new TernaryConvertor();
 
-            ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
+            //ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
 
-            Console.WriteLine("Test");
-            Console.WriteLine(ternaryConvertor.ConvertToTernary(47));
+            //Console.WriteLine("Test");
+            //Console.WriteLine(ternaryConvertor.ConvertToTernary(47));
 
 
 
             Console.WriteLine("Enter 9 integer digits: ");
             string numbersArray = Console.ReadLine();
 
+            ISBN isbn = new ISBN();
+            isbn.IsbnNumericCode(numbersArray);
         }
 /*
         //This methos converts given number  to ternary number system and returns

@@ -3,71 +3,74 @@ namespace CS_Homework_2
 {
     public class ISBN
     {
-        public ISBN()
+        //This method takes a string and conversts to int array
+        public string StringToIntArrayConvertor(string numbersInString)
         {
-        }
-
-        public int[] ArrayOfIntegers(string numbersInString)
-        {
-            int[] arrayOfNum = new int[9];
+            int[] arrayOfNum = new int[numbersInString.Length];
 
             for (int i = 0; i < arrayOfNum.Length; i++)
             {
-                arrayOfNum[i] = numbersInString[i];
+                arrayOfNum[i] = (int)Char.GetNumericValue(numbersInString[i]);
             }
-            return arrayOfNum;
+            
+            return MultiplicationOfNumbers(arrayOfNum);
         }
 
-        public int MultiplicationOfNumbers(int[] arrayOfNumbers)
+        //Multiplies the array of integers accordingly to ISBN counting standart
+        public string MultiplicationOfNumbers(int[] arrayOfNumbers)
         {
             int sumOfMultipliedNumbers = 0;
 
-            for (int i = 0; i < arrayOfNumbers.Length; i++)
+            for (int i = 0, count = 10; i < arrayOfNumbers.Length; i++, count--)
             {
-                int count = 10;
                 sumOfMultipliedNumbers += arrayOfNumbers[i] * count;
+
             }
 
-            return sumOfMultipliedNumbers;
+            return CheckDigit(sumOfMultipliedNumbers);
 
         }
-
+        //Calculates check digit
         public string CheckDigit(int sumOfMultipliedNumbers)
         {
             int remainder = sumOfMultipliedNumbers % 11;
-
+            
             if (remainder == 10)
             {
                 return "X";
             }
             else
             {
-                return (11 - remainder).ToString();
+                int digit = 11 - remainder;
+
+                return digit.ToString();
             }
         }
 
-        public string isbnString(string clientInput)
+        //Method combines ISBN code
+        public void IsbnNumericCode(string userInput)
         {
-            string finalIsbnString = "ISBN ";
+            string finalIsbn = "ISBN ";
 
-            for (int i = 0; i < clientInput.Length; i++)
+            for (int i = 0; i < userInput.Length; i++)
             {
                 if (i == 0 || i == 6 || i == 8)
                 {
-                    finalIsbnString += i + "-";
+                    finalIsbn += userInput[i] + "-";
                 }
                 else
                 {
-                    finalIsbnString += i;
+                    finalIsbn += userInput[i];
                 }
             }
+            string checkDigit = StringToIntArrayConvertor(userInput);
 
-            return finalIsbnString;
+            Print(finalIsbn += checkDigit);
         }
 
-        public void Print(string array)
+        public void Print(string isbnCode)
         {
-
+            Console.WriteLine(isbnCode);
         }
     }
 }
