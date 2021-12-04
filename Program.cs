@@ -30,12 +30,14 @@ namespace CS_Homework_1
             //ISBN isbn = new ISBN();
             //isbn.IsbnNumericCode(numbersArray);
 
-            Console.WriteLine("Enter at least two integer digits: ");
+            Console.WriteLine("Enter at least two integer digits separated by comma: ");
             string userInputNumbers = Console.ReadLine();
 
             SumOfArray sumOfArray = new SumOfArray();
             Console.WriteLine(userInputNumbers);
             Console.WriteLine(sumOfArray.SumOfRequaredNumbers(userInputNumbers));
+            //sumOfArray.StringToInt(userInputNumbers);
+           
         }
 /*
         //This methos converts given number  to ternary number system and returns
