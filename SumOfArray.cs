@@ -3,9 +3,30 @@ namespace CS_HOMEWORK_1
 {
     public class SumOfArray
     {
-        //public SumOfArray()
-        //{
-        //}
+        public void SumOfRequaredNumbers(string userInputNumbers)
+        {
+            int[] convertedNumbers = StringToInt(userInputNumbers);
+            int maxIndex = MaxValueIndex(convertedNumbers);
+            int minIndex = MinValueIndex(convertedNumbers);
+            int sumOfRequaredNumbers = 0;
+
+            if (minIndex < maxIndex)
+            {
+                for (int i = minIndex; i <= maxIndex; i++)
+                {
+                    sumOfRequaredNumbers += convertedNumbers[i];
+                }
+            }
+            else
+            {
+                for (int i = maxIndex; i <= minIndex; i++)
+                {
+                    sumOfRequaredNumbers += convertedNumbers[i];
+                }
+            }
+
+            Print(sumOfRequaredNumbers);
+        }
 
         public int[] StringToInt(string userInpput)
         {
@@ -23,7 +44,6 @@ namespace CS_HOMEWORK_1
         //Calculates the biggest most right-hand side number in the array
         public int MaxValueIndex(int[] userInputNumbers)
         {
-
             int maxValueIndex = 0;
 
             for (int i = 1; i < userInputNumbers.Length; i++)
@@ -51,30 +71,9 @@ namespace CS_HOMEWORK_1
             return minValueIndex;
         }
 
-        public int SumOfRequaredNumbers(string userInputNumbers)
+        public void Print(int sumOfPartOfArray)
         {
-            int[] convertedNumbers = StringToInt(userInputNumbers);
-            int minIndex = MinValueIndex(convertedNumbers);
-            int maxIndex = MaxValueIndex(convertedNumbers);
-            int sumOfRequaredNumbers = 0;
-
-            if (minIndex < maxIndex)
-            {
-                for (int i = minIndex; i <= maxIndex; i++)
-                {
-                    sumOfRequaredNumbers += convertedNumbers[i];
-                }
-            }
-            else
-            {
-                for (int i = maxIndex; i <= minIndex; i++)
-                {
-                    sumOfRequaredNumbers += convertedNumbers[i];
-                }
-            }
-
-            return sumOfRequaredNumbers;
+            Console.WriteLine(sumOfPartOfArray);
         }
-
     }
 }
