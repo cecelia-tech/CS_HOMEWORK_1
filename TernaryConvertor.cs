@@ -10,9 +10,9 @@ namespace CS_HOMEWORK_1
         {
             for (int i = nuo; i <= iki; i++)
             {
-                if (CheckForTwos(ConvertToTernary(i)))
+                if (CheckForTwos(CheckForZeroAndNegativesBeforeConverting(i)))
                 {
-                    NumberPrint(i);
+                    Console.WriteLine(i);
                 }
             }
         }
@@ -33,36 +33,44 @@ namespace CS_HOMEWORK_1
             return numberOf2InString == 2;
         }
 
+        public StringBuilder CheckForZeroAndNegativesBeforeConverting(int number)
+        {
+            StringBuilder answer = new StringBuilder();
+
+            if (number > 0)
+            {
+                return answer = ConvertToTernary(number);
+            }
+            else if (number == 0)
+            {
+                return answer.Append('0');
+            }
+            else
+            {
+                return answer.Append("Cannot convert negative digit");
+            }
+        }
+
         //This method converts given number  to ternary number system and returns
         //it as a string
         public StringBuilder ConvertToTernary(int number)
         {
             StringBuilder ternaryString = new StringBuilder();
 
+            if (number == 0)
+            {
+                return ternaryString;
+            }
+
             //Ternary number system base is 3, it is okay to hardcode it
             int quotient = number / 3;
             int remainder = number % 3;
 
-            //the ternaryString is made by adding each number to the front of
-            //the array
-            ternaryString.Insert(0, remainder);
-
-            if (quotient >= 3)
-            {
-                ternaryString.Insert(0, ConvertToTernary(quotient));
-            }
-            else
-            {
-                //ternary number system first number always is 1
-                ternaryString.Insert(0, 1);
-            }
+            ternaryString = ConvertToTernary(quotient);
+            
+            ternaryString.Append(remainder);
 
             return ternaryString;
-        }
-
-        public void NumberPrint(int number)
-        {
-            Console.WriteLine(number);
         }
     }
 }

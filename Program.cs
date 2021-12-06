@@ -17,12 +17,14 @@ namespace CS_Homework_1
 
             //TernaryConvertor ternaryConvertor = new TernaryConvertor();
 
-            //ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
+            ////ternaryConvertor.CheckForAppropriateInteger(countFrom, countTo);
 
             //Console.WriteLine("Test");
-            //Console.WriteLine(ternaryConvertor.ConvertToTernary(47));
+            //Console.WriteLine(ternaryConvertor.CheckForZeroBeforeConverting(-11));
 
-
+            int n = -8;
+            Nonesence nonesence = new Nonesence();
+            nonesence.Convert(n);
 
             //Console.WriteLine("Enter 9 integer digits: ");
             //string numbersArray = Console.ReadLine();
@@ -30,14 +32,14 @@ namespace CS_Homework_1
             //ISBN isbn = new ISBN();
             //isbn.IsbnNumericCode(numbersArray);
 
-            Console.WriteLine("Enter at least two integer digits separated by comma: ");
-            string userInputNumbers = Console.ReadLine();
+            //Console.WriteLine("Enter at least two integer digits separated by comma: ");
+            //string userInputNumbers = Console.ReadLine();
 
-            SumOfArray sumOfArray = new SumOfArray();
-            Console.WriteLine(userInputNumbers);
-            Console.WriteLine(sumOfArray.PrintSumOfRequiredNumbers(userInputNumbers));
+            //SumOfArray sumOfArray = new SumOfArray();
+            //Console.WriteLine(userInputNumbers);
+            //Console.WriteLine(sumOfArray.PrintSumOfRequiredNumbers(userInputNumbers));
             //sumOfArray.StringToInt(userInputNumbers);
-           
+
         }
 /*
         //This methos converts given number  to ternary number system and returns
