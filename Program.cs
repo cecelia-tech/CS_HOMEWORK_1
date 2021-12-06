@@ -35,7 +35,7 @@ namespace CS_Homework_1
 
             SumOfArray sumOfArray = new SumOfArray();
             Console.WriteLine(userInputNumbers);
-            Console.WriteLine(sumOfArray.SumOfRequaredNumbers(userInputNumbers));
+            Console.WriteLine(sumOfArray.PrintSumOfRequiredNumbers(userInputNumbers));
             //sumOfArray.StringToInt(userInputNumbers);
            
         }

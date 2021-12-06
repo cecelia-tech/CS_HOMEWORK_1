@@ -1,13 +1,13 @@
 ﻿using System;
 namespace CS_HOMEWORK_1
 {
-    public class SumOfArray
+    internal class SumOfArray
     {
-        public void SumOfRequaredNumbers(string userInputNumbers)
+        public int PrintSumOfRequiredNumbers(string userInputNumbers)
         {
-            int[] convertedNumbers = StringToInt(userInputNumbers);
-            int maxIndex = MaxValueIndex(convertedNumbers);
-            int minIndex = MinValueIndex(convertedNumbers);
+            int[] convertedNumbers = ConvertsStringToInt(userInputNumbers);
+            int maxIndex = FindsMaxValueIndex(convertedNumbers);
+            int minIndex = FindsMinValueIndex(convertedNumbers);
             int sumOfRequaredNumbers = 0;
 
             if (minIndex < maxIndex)
@@ -25,10 +25,10 @@ namespace CS_HOMEWORK_1
                 }
             }
 
-            Print(sumOfRequaredNumbers);
+            return sumOfRequaredNumbers;
         }
 
-        public int[] StringToInt(string userInpput)
+        public int[] ConvertsStringToInt(string userInpput)
         {
             string[] arrayOfStrings = userInpput.Split(',');
             int[] userInputNumbers2 = new int[arrayOfStrings.Length];
@@ -42,7 +42,7 @@ namespace CS_HOMEWORK_1
         }
 
         //Calculates the biggest most right-hand side number in the array
-        public int MaxValueIndex(int[] userInputNumbers)
+        public int FindsMaxValueIndex(int[] userInputNumbers)
         {
             int maxValueIndex = 0;
 
@@ -57,7 +57,7 @@ namespace CS_HOMEWORK_1
         }
 
         //Calculates the smallest most left-hand side number in the array
-        public int MinValueIndex(int[] userInputNumbers)
+        public int FindsMinValueIndex(int[] userInputNumbers)
         {
             int minValueIndex = 0;
 
@@ -69,11 +69,6 @@ namespace CS_HOMEWORK_1
                 }
             }
             return minValueIndex;
-        }
-
-        public void Print(int sumOfPartOfArray)
-        {
-            Console.WriteLine(sumOfPartOfArray);
         }
     }
 }
