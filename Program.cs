@@ -5,6 +5,8 @@ using CS_Homework_2;
 
 namespace CS_Homework_1
 {
+    using CS_HOMEWORK_2;
+
     class Program1
     {
         static void Main(string[] args)
@@ -22,9 +24,9 @@ namespace CS_Homework_1
             //Console.WriteLine("Test");
             //Console.WriteLine(ternaryConvertor.CheckForZeroBeforeConverting(-11));
 
-            int n = -8;
-            Nonesence nonesence = new Nonesence();
-            nonesence.Convert(n);
+            //int n = -8;
+            //Nonesence nonesence = new Nonesence();
+            //nonesence.Convert(n);
 
             //Console.WriteLine("Enter 9 integer digits: ");
             //string numbersArray = Console.ReadLine();
@@ -40,72 +42,103 @@ namespace CS_Homework_1
             //Console.WriteLine(sumOfArray.PrintSumOfRequiredNumbers(userInputNumbers));
             //sumOfArray.StringToInt(userInputNumbers);
 
+            /////////////////////////////////////////////**************************
+
+            int[] numbersArray = { 1, 2, 3, 4, 5 };
+
+            int[] numbersArray2 = { 6, 7, 8 };
+
+            DiagonalMatrix diagonalMatrix = new DiagonalMatrix(numbersArray);
+
+            diagonalMatrix.PrintDiagonalMatrix();
+
+            Console.WriteLine(diagonalMatrix.ToString());
+
+            DiagonalMatrix diagonalMatrix2 = new DiagonalMatrix(numbersArray2);
+
+            diagonalMatrix2.PrintDiagonalMatrix();
+
+            //int[] addedMatrixes = numbersArray2.AddsTwoDiagonalMatrices(numbersArray);
+
+            //DiagonalMatrix diagonalMatrix3 = new DiagonalMatrix(addedMatrixes);
+
+            //diagonalMatrix3.PrintDiagonalMatrix(addedMatrixes);
+
+            //var addedMatrices = diagonalMatrix.AddsTwoDiagonalMatrices(diagonalMatrix2);
+
+            Console.WriteLine("----------------");
+
+            //DiagonalMatrix diagonalMatrix3 = new DiagonalMatrix(addedMatrices);
+            //diagonalMatrix3.PrintDiagonalMatrix(addedMatrices);
+            //addedMatrices.PrintDiagonalMatrix();
+
         }
-/*
-        //This methos converts given number  to ternary number system and returns
-        //it as a string
+        /*
+                //This methos converts given number  to ternary number system and returns
+                //it as a string
 
-        public static StringBuilder ConvertToTernary (int number)
-        {
-            StringBuilder ternaryString = new StringBuilder();
-
-            //since ternary base is 3, it is okay to hardcode it
-
-            int dalinys = number / 3;
-            int remainder = number % 3;
-
-            //the ternaryString is made by adding each number to the front of
-            //the array
-
-            ternaryString.Insert(0, remainder);
-
-            if (dalinys >= 3)
-            {
-                ternaryString.Insert(0, ConvertToTernary(dalinys));
-            }
-            else
-            {
-                //ternary number system first number always is 1
-
-                ternaryString.Insert(0, 1);
-            }
-
-            return ternaryString;
-        }
-
-        //checks how many number 2 has the string and returns true if it has two 2s
-
-        public static bool CheckForTwos(StringBuilder ternaryString)
-        {
-            int numberOf2InString = 0;
-
-            for (int i = 0; i < ternaryString.Length; i++)
-            {
-                if (ternaryString[i] == '2')
+                public static StringBuilder ConvertToTernary (int number)
                 {
-                    numberOf2InString++;
+                    StringBuilder ternaryString = new StringBuilder();
+
+                    //since ternary base is 3, it is okay to hardcode it
+
+                    int dalinys = number / 3;
+                    int remainder = number % 3;
+
+                    //the ternaryString is made by adding each number to the front of
+                    //the array
+
+                    ternaryString.Insert(0, remainder);
+
+                    if (dalinys >= 3)
+                    {
+                        ternaryString.Insert(0, ConvertToTernary(dalinys));
+                    }
+                    else
+                    {
+                        //ternary number system first number always is 1
+
+                        ternaryString.Insert(0, 1);
+                    }
+
+                    return ternaryString;
                 }
-            }
 
-            return numberOf2InString == 2;
-        }
+                //checks how many number 2 has the string and returns true if it has two 2s
 
-        //Method checks for numbers satisfying the task in the range given
-
-        public static void CheckForAppropriateInteger(int nuo, int iki)
-        {
-            for (int i = nuo; i <= iki; i++)
-            {
-                if (CheckForTwos(ConvertToTernary(i)))
+                public static bool CheckForTwos(StringBuilder ternaryString)
                 {
-                    NumberPrint(i);
-                }
-            }
-        }
+                    int numberOf2InString = 0;
 
-        public static void NumberPrint(int number)
-        {
-            Console.WriteLine(number);
-       */ 
+                    for (int i = 0; i < ternaryString.Length; i++)
+                    {
+                        if (ternaryString[i] == '2')
+                        {
+                            numberOf2InString++;
+                        }
+                    }
+
+                    return numberOf2InString == 2;
+                }
+
+                //Method checks for numbers satisfying the task in the range given
+
+                public static void CheckForAppropriateInteger(int nuo, int iki)
+                {
+                    for (int i = nuo; i <= iki; i++)
+                    {
+                        if (CheckForTwos(ConvertToTernary(i)))
+                        {
+                            NumberPrint(i);
+                        }
+                    }
+                }
+
+                public static void NumberPrint(int number)
+                {
+                    Console.WriteLine(number);
+               */
+        
     }
 }

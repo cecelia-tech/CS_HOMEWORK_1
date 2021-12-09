@@ -62,7 +62,6 @@ namespace CS_HOMEWORK_1
                 return ternaryString;
             }
 
-            //Ternary number system base is 3, it is okay to hardcode it
             int quotient = number / 3;
             int remainder = number % 3;
 

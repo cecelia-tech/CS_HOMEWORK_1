@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Test\h2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test\h2\" />
+  </ItemGroup>
 </Project>
