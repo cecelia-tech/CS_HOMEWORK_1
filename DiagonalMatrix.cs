@@ -8,6 +8,11 @@ namespace CS_Homework_1
         internal int[] diagonalNumbers;
         private readonly int size;
 
+        public int Size
+        {
+            get => size;
+        }
+
         public DiagonalMatrix(params int[] diagonalNumbers)
         {
             this.diagonalNumbers = diagonalNumbers;
@@ -37,7 +42,6 @@ namespace CS_Homework_1
             {
                 _sum += _number;
             }
-
             return _sum;
         }
 
@@ -45,7 +49,10 @@ namespace CS_Homework_1
         {
             var _diagonalMatrix = obj as DiagonalMatrix;
 
-            if (_diagonalMatrix == null || diagonalNumbers == null ||
+            if (this == null ||
+                _diagonalMatrix == null ||
+                _diagonalMatrix.size == 0 ||
+                size == 0 ||
                 size != _diagonalMatrix.size)
             {
                 return false;
@@ -81,11 +88,6 @@ namespace CS_Homework_1
                 _answer.Append("\n");
             }
             return _answer.ToString();
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
     }
 }

@@ -21,12 +21,7 @@ namespace CS_HOMEWORK_2
 
                 _sumedArray = new int[_paddedArray.Length];
 
-                _sumedArray = _secondDiagonal.Zip(_paddedArray, (x, y) => x + y).ToArray();
-                //for (int i = 0; i < _paddedArray.Length; i++)
-                //{
-                //    _sumedArray[i] = _paddedArray[i] + _secondDiagonal[i];
-                //}
-
+                _sumedArray = _secondDiagonal.Zip(_paddedArray, (number1, number2) => number1 + number2).ToArray();
             }
             else if (_firstDiagonal.Length > _secondDiagonal.Length)
             {
@@ -35,20 +30,14 @@ namespace CS_HOMEWORK_2
                 Array.Copy(_secondDiagonal, _paddedArray, _secondDiagonal.Length);
 
                 _sumedArray = new int[_paddedArray.Length];
-                //_sumedArray = _firstDiagonal.Zip(_paddedArray, (x, y) => x + y).ToArray();
-                for (int i = 0; i < _paddedArray.Length; i++)
-                {
-                    _sumedArray[i] = _paddedArray[i] + _firstDiagonal[i];
-                }
+
+                _sumedArray = _firstDiagonal.Zip(_paddedArray, (number1, number2) => number1 + number2).ToArray();
             }
             else
             {
                 _sumedArray = new int[_firstDiagonal.Length];
 
-                for (int i = 0; i < _firstDiagonal.Length; i++)
-                {
-                    _sumedArray[i] = _firstDiagonal[i] + _secondDiagonal[i];
-                }
+                _sumedArray = _firstDiagonal.Zip(_secondDiagonal, (number1, number2) => number1 + number2).ToArray();
             }
             return new DiagonalMatrix(_sumedArray);
         }

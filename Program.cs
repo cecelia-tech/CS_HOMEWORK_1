@@ -50,36 +50,31 @@ namespace CS_Homework_1
 
             DiagonalMatrix diagonalMatrix = new DiagonalMatrix(numbersArray);
 
-            diagonalMatrix.ToString();
-
-            // Console.WriteLine(diagonalMatrix.ToString());
+            Console.WriteLine("ToString method: ");
+            Console.WriteLine(diagonalMatrix.ToString());
+            Console.WriteLine("----------------");
 
             DiagonalMatrix diagonalMatrix2 = new DiagonalMatrix(numbersArray2);
-
-            diagonalMatrix2.ToString();
 
             Console.WriteLine("Checking the Add method");
             var addedMatrices = diagonalMatrix2.Add(diagonalMatrix);
 
-
-            addedMatrices.ToString();
+            Console.WriteLine(addedMatrices.ToString());
             Console.WriteLine("----------------");
 
+            Console.WriteLine("Equals method: ");
             Console.WriteLine(diagonalMatrix2.Equals(diagonalMatrix));
+            Console.WriteLine("----------------");
 
-            Console.WriteLine(diagonalMatrix2.ToString());
-
+            Console.WriteLine("Indexer check: ");
             Console.WriteLine(diagonalMatrix2[0, 0]);
             Console.WriteLine(diagonalMatrix2[0, 7]);
             diagonalMatrix2[0, 0] = 44;
             Console.WriteLine(diagonalMatrix2[0, 0]);
+            Console.WriteLine("----------------");
 
-            diagonalMatrix2.diagonalNumbers = null;
-            Console.WriteLine(diagonalMatrix2.Equals(diagonalMatrix));
-
-            //DiagonalMatrix diagonalMatrix3 = new DiagonalMatrix(addedMatrices);
-            //diagonalMatrix3.PrintDiagonalMatrix(addedMatrices);
-            //addedMatrices.PrintDiagonalMatrix();
+            Console.WriteLine(diagonalMatrix.Size);
+            Console.WriteLine(diagonalMatrix2.Track());
 
         }
         /*
